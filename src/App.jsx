@@ -9,7 +9,7 @@ import Contact from "./pages/Contact";
 import ProjectDetails from "./pages/ProjectDetails";
 import BlogPost from "./pages/BlogPost";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (

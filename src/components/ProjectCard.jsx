@@ -20,11 +20,11 @@ const ProjectCard = ({ project, delay }) => {
       </p>
 
       <div className="buttons">
-        <a href={project.live} target="_blank">
+        <a href={project.live} target="_blank" rel="noopener noreferrer">
           <button>Live</button>
         </a>
 
-        <a href={project.github} target="_blank">
+        <a href={project.github} target="_blank" rel="noopener noreferrer">
           <button>GitHub</button>
         </a>
       </div>

@@ -30,12 +30,13 @@ export default function ProjectDetails() {
       </ul>
 
       <div style={{ marginTop: "2rem" }}>
-        <a href={project.live} target="_blank">
+        <a href={project.live} target="_blank" rel="noopener noreferrer">
           <button>Live Demo</button>
         </a>
         <a
           href={project.github}
           target="_blank"
+          rel="noopener noreferrer"
           style={{ marginLeft: "1rem" }}
         >
           <button>GitHub</button>
