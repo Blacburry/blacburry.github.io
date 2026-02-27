@@ -14,17 +14,14 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "1.5rem 8%",
-        background: "#111",
-        position: "sticky",
-        top: 0,
-        zIndex: 1000,
-        background: "rgba(17,17,17,0.7)",
-backdropFilter: "blur(10px)",
-borderBottom: "1px solid rgba(255,255,255,0.05)"
-      }}
+  position: "fixed",
+  top: 0,
+  width: "100%",
+  zIndex: 1000,
+  background: "rgba(17,17,17,0.7)",
+  backdropFilter: "blur(10px)",
+  borderBottom: "1px solid rgba(255,255,255,0.05)"
+}}
     >
       <h3 style={{ cursor: "pointer" }} onClick={() => scrollToSection("home")}>
         Blacburry
