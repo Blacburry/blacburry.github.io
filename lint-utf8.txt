@@ -1,0 +1,22 @@
+﻿
+> blacburry.github.io@0.0.0 lint
+> eslint .
+
+
+C:\Users\chydi\OneDrive\Documents\GitHub\blacburry.github.io\src\components\Navbar.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\chydi\OneDrive\Documents\GitHub\blacburry.github.io\src\components\ProjectCard.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\chydi\OneDrive\Documents\GitHub\blacburry.github.io\src\pages\Home.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\chydi\OneDrive\Documents\GitHub\blacburry.github.io\src\pages\ProjectDetails.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\chydi\OneDrive\Documents\GitHub\blacburry.github.io\src\pages\Projects.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Γ£û 5 problems (5 errors, 0 warnings)
+

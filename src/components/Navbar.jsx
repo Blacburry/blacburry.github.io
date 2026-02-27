@@ -1,7 +1,13 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
+
+  const scrollToSection = (id) => {
+    document.getElementById(id).scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <motion.nav
       initial={{ y: -80 }}
@@ -14,16 +20,29 @@ const Navbar = () => {
         background: "#111",
         position: "sticky",
         top: 0,
-        zIndex: 1000
+        zIndex: 1000,
+        background: "rgba(17,17,17,0.7)",
+backdropFilter: "blur(10px)",
+borderBottom: "1px solid rgba(255,255,255,0.05)"
       }}
     >
-      <h3>Blacburry</h3>
+      <h3 style={{ cursor: "pointer" }} onClick={() => scrollToSection("home")}>
+        Blacburry
+      </h3>
 
       <div style={{ display: "flex", gap: "2rem" }}>
-        <Link to="/">Home</Link>
-        <Link to="/projects">Projects</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/about">About</Link>
+        <span onClick={() => scrollToSection("home")} style={{ cursor: "pointer" }}>
+          Home
+        </span>
+        <span onClick={() => scrollToSection("projects")} style={{ cursor: "pointer" }}>
+          Projects
+        </span>
+        <span onClick={() => scrollToSection("blog")} style={{ cursor: "pointer" }}>
+          Blog
+        </span>
+        <span onClick={() => scrollToSection("about")} style={{ cursor: "pointer" }}>
+          About
+        </span>
       </div>
     </motion.nav>
   );
