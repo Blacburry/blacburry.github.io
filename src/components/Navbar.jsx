@@ -1,60 +1,85 @@
-import { motion } from "framer-motion";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-const Navbar = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
 
-  const scrollToSection = (id) => {
-    if (location.pathname !== "/") {
-      navigate("/");
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({
-          behavior: "smooth",
-        });
-      }, 100);
-    } else {
-      document.getElementById(id)?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+    <nav
       style={{
-  position: "fixed",
-  top: 0,
-  width: "100%",
-  zIndex: 1000,
-  background: "rgba(17,17,17,0.7)",
-  backdropFilter: "blur(10px)",
-  borderBottom: "1px solid rgba(255,255,255,0.05)"
-}}
+        position: "fixed",
+        top: 0,
+        width: "100%",
+        zIndex: 1000,
+        padding: "1.2rem 5%",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        background: scrolled
+          ? "rgba(15,15,25,0.8)"
+          : "rgba(15,15,25,0.4)",
+        backdropFilter: "blur(12px)",
+        borderBottom: scrolled
+          ? "1px solid rgba(255,255,255,0.08)"
+          : "1px solid transparent",
+        transition: "all 0.3s ease",
+      }}
     >
-      <h3 style={{ cursor: "pointer" }} onClick={() => scrollToSection("home")}>
+      {/* Logo */}
+      <div
+        style={{
+          fontWeight: "700",
+          fontSize: "1.2rem",
+          letterSpacing: "1px",
+        }}
+      >
         Blacburry
-      </h3>
-
-      <div style={{ display: "flex", gap: "2rem" }}>
-        <span onClick={() => scrollToSection("home")} style={{ cursor: "pointer" }}>
-          Home
-        </span>
-        <span onClick={() => scrollToSection("projects")} style={{ cursor: "pointer" }}>
-          Projects
-        </span>
-        <span onClick={() => scrollToSection("blog")} style={{ cursor: "pointer" }}>
-          Blog
-        </span>
-        <span onClick={() => scrollToSection("about")} style={{ cursor: "pointer" }}>
-          About
-        </span>
       </div>
-    </motion.nav>
-  );
-};
 
-export default Navbar;
+      {/* Nav Links */}
+      <div
+        style={{
+          display: "flex",
+          gap: "2rem",
+          fontSize: "0.95rem",
+          fontWeight: "500",
+        }}
+      >
+        {["Home", "Projects", "Blog", "About", "Contact"].map((item) => (
+          <a
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            style={{
+              position: "relative",
+              textDecoration: "none",
+              color: "white",
+              transition: "0.3s",
+            }}
+          >
+            {item}
+            <span
+              style={{
+                position: "absolute",
+                left: 0,
+                bottom: "-4px",
+                width: "0%",
+                height: "2px",
+                background: "#8b5cf6",
+                transition: "0.3s",
+              }}
+              className="nav-underline"
+            />
+          </a>
+        ))}
+      </div>
+    </nav>
+  );
+}
