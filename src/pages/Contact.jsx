@@ -1,18 +1,28 @@
-import SectionWrapper from "../components/SectionWrapper";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function Contact() {
   return (
-    <SectionWrapper id="contact">
-      <>
-        <h1 style={{ marginBottom: "1rem" }}>Let’s Connect</h1>
-        <p style={{ opacity: 0.7, marginBottom: "2rem" }}>
+    <motion.section
+      id="contact"
+      className="contact-section"
+      initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <div className="contact-container">
+        <h1>Let’s Connect</h1>
+        <p>
           Interested in collaboration, internships, or building something
           ambitious together?
         </p>
 
         <div className="contact-links">
           <a href="mailto:chydibya2006@gmail.com">
-            chydibya2006@gmail.com
+            <MdEmail size={22} />
+            <span>Email</span>
           </a>
 
           <a
@@ -20,10 +30,19 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer"
           >
-            GitHub Profile
+            <FaGithub size={22} />
+            <span>GitHub</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/dibya-chowdhury-355967322"
+            rel="noreferrer"
+          >
+            <FaLinkedin size={22} />
+            <span>LinkedIn</span>
           </a>
         </div>
-      </>
-    </SectionWrapper>
+      </div>
+    </motion.section>
   );
 }

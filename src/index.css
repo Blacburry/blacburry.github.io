@@ -138,44 +138,39 @@ section {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
 .contact-section {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at 70% 30%, #1a1a2e, #0f0f0f);
-  text-align: center;
-  padding: 6rem 8%;
+  padding: 6rem 10%;
 }
 
-.contact-container h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.contact-container p {
-  opacity: 0.7;
-  margin-bottom: 2rem;
+.contact-container {
+  max-width: 700px;
 }
 
 .contact-links {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2rem;
 }
 
 .contact-links a {
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
-  border-radius: 30px;
-  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
   text-decoration: none;
-  transition: 0.3s ease;
+  color: white;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+  font-weight: 500;
 }
 
 .contact-links a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+  transform: translateY(-4px);
+  background: rgba(139,92,246,0.2);
+  border: 1px solid #8b5cf6;
 }
 section {
   min-height: 100vh;
