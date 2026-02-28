@@ -208,3 +208,66 @@ nav a:hover .nav-underline {
 nav a:hover {
   color: #8b5cf6;
 }
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+nav button:hover {
+  color: #8b5cf6;
+}
+/* Navbar wrapper */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+  background: rgba(15,15,25,0.6);
+}
+
+.navbar.scrolled {
+  background: rgba(15,15,25,0.9);
+}
+
+/* Inner content with safe max width */
+.navbar-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.nav-links button:hover {
+  color: #8b5cf6;
+}
